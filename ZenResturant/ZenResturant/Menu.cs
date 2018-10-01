@@ -26,5 +26,11 @@ namespace ZenResturant
             FClientes fclientes = new FClientes();
             Inicio.Cargarf(fclientes);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FProductos fproductos = new FProductos();
+            Inicio.Cargarf(fproductos);
+        }
     }
 }

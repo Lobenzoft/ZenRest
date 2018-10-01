@@ -70,11 +70,18 @@
     </Compile>
     <Compile Include="Cnx.cs" />
     <Compile Include="DataCliente.cs" />
+    <Compile Include="DataProducto.cs" />
     <Compile Include="FAgregarClientes.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="FAgregarClientes.Designer.cs">
       <DependentUpon>FAgregarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FAgregarProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FAgregarProducto.Designer.cs">
+      <DependentUpon>FAgregarProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="FClientes.cs">
       <SubType>UserControl</SubType>
@@ -87,6 +94,18 @@
     </Compile>
     <Compile Include="FEditarClientes.Designer.cs">
       <DependentUpon>FEditarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FEditarProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FEditarProducto.Designer.cs">
+      <DependentUpon>FEditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FProductos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FProductos.Designer.cs">
+      <DependentUpon>FProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
@@ -105,11 +124,20 @@
     <EmbeddedResource Include="FAgregarClientes.resx">
       <DependentUpon>FAgregarClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FAgregarProducto.resx">
+      <DependentUpon>FAgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FClientes.resx">
       <DependentUpon>FClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FEditarClientes.resx">
       <DependentUpon>FEditarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FEditarProducto.resx">
+      <DependentUpon>FEditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FProductos.resx">
+      <DependentUpon>FProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
