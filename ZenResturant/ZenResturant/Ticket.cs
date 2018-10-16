@@ -81,12 +81,41 @@ namespace ZenResturant
                 int c1=t1.Length;
                 int c2 = t2.Length;
                 int espacio = (maxCar - c1) - c2;
-                //string[] espacios = "";
-                //linea.AppendLine(t1++t2);
+                string espacios = "";
+            for (int i=0;i<espacio;i++)
+            {
+                espacios +=" ";
+            }
+                linea.AppendLine(t1+espacios+t2);
+            }
+
+        public void Textodetalle(string t1, string t2, string t3,string t4)
+        {
+
+            while (t1.Length<6)
+            {
+                t1 += " ";
+            }
+            while (t2.Length < 15)
+            {
+                t2 += " ";
+            }
+
+            int c1 = t1.Length;
+            int c2 = t2.Length;
+            int c3 = t3.Length;
+            int c4 = t4.Length;
+            int espacio = (((maxCar - c1) - c2)-c3) - c4;
+            string espacios = "";
+            for (int i = 0; i < espacio; i++)
+            {
+                espacios += " ";
+            }
+            linea.AppendLine(t1 +t2+t3+ espacios+t4);
         }
 
-            //Creamos un metodo para poner texto a la derecha.
-            public void TextoDerecha(string texto)
+        //Creamos un metodo para poner texto a la derecha.
+        public void TextoDerecha(string texto)
             {
                 //Si la longitud del texto es mayor al numero maximo de caracteres permitidos, realizar el siguiente procedimiento.
                 if (texto.Length > maxCar)

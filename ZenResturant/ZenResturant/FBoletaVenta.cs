@@ -21,7 +21,7 @@ namespace ZenResturant
             dataV = new DataVenta();
             dataP = new DataProducto();
             dataC = new DataCliente();
-            tckt = new Ticket();
+            
             DGridLista.DataSource = dataP.CrudProducto("select");
             DGridLista.Columns[0].Visible = false;
             DGridLista.Columns[1].HeaderText = "Nombre";
@@ -54,36 +54,57 @@ namespace ZenResturant
             }
             dataV.Crudpago("0",row[0].ToString(), Convert.ToDouble(textBox1.Text),Math.Round(Convert.ToDouble(textBox5.Text),2),"0","new");
             FBoletaVenta fBoletaventa = new FBoletaVenta();
-
-            Inicio.Cargarf(fBoletaventa);
             */
-            ImprimirTckt(textBox7.Text, dateTimePicker1.Value.ToString("yyyy-MM-dd"),textBox3.Text);
+
+            ImprimirTckt(textBox7.Text, dateTimePicker1.Value.ToString("yyyy-MM-dd hh:mm:ss"), textBox3.Text,Convert.ToDouble( textBox4.Text).ToString("N2"));
+            //Inicio.Cargarf(fBoletaventa);
         }
 
-        private void ImprimirTckt(string wifi,string fecha,string orden)
+        private void ImprimirTckt(string wifi,string fecha,string orden,string total)
         {
+            tckt = new Ticket();
+            
+            tckt.TextoCentro("WIFI: " + wifi);
             tckt.TextoCentro("NOTA DE VENTA");
             tckt.lineasGuio();
-            tckt.TextoIzquierda("FECHA: "+fecha);
-            tckt.TextoDerecha("#ORDEN : " + orden);
-            tckt.TextoCentro("");
-            tckt.TextoCentro("");
-            tckt.TextoCentro("");
+            tckt.TextoPar("FECHA: " + fecha,"#ORDEN : " + orden);
+            //tckt.TextoIzquierda("FECHA: "+fecha);
+            //tckt.TextoDerecha("#ORDEN : " + orden);
             tckt.lineasGuio();
+            tckt.Textodetalle("Cant.","Detalle","P.Unit","Sub.Total");
+            tckt.lineasGuio();
+            for (int fila = DGridProductos.Rows.Count - 1; fila >= 0; fila--)
+            {
+                tckt.Textodetalle(DGridProductos.Rows[fila].Cells[3].Value.ToString(),DGridProductos.Rows[fila].Cells[1].Value.ToString(), DGridProductos.Rows[fila].Cells[2].Value.ToString(),(Convert.ToDouble( DGridProductos.Rows[fila].Cells[2].Value)*Convert.ToDouble( DGridProductos.Rows[fila].Cells[3].Value)).ToString("N2"));
+            }
+            tckt.lineasGuio();
+            tckt.TextoPar("", "Total : " + total);
+            tckt.TextoCentro("");
+            tckt.TextoCentro("GRACIAS POR SU PREFERENCIA");
+            tckt.TextoCentro("LO ESPERAMOS PRONTO");
             //ticket.TextoCentro("1234567890123456789012345678901234567890");
-            for (int i = 0; i <= 7; i++)
+            for (int i = 0; i <= 3; i++)
+            {
+                tckt.TextoCentro("");
+            }
+            tckt.TextoCentro("NOTA DE PEDIDO #ORDEN : " + orden);
+            tckt.lineasGuio();
+            tckt.Textodetalle("", "Detalle", "Cantidad", "");
+            tckt.CortaTicket();
+            for (int fila = DGridProductos.Rows.Count - 1; fila >= 0; fila--)
+            {
+                tckt.Textodetalle("", DGridProductos.Rows[fila].Cells[1].Value.ToString(), DGridProductos.Rows[fila].Cells[3].Value.ToString(), "");
+            }
+            for (int i = 0; i <= 3; i++)
             {
                 tckt.TextoCentro("");
             }
             tckt.TextoCentro("BART RESTAURAT NANNY-GOURMET");
-            tckt.TextoCentro("");
             tckt.TextoCentro("DIRECCION: AV. EL REMANSO #9025");
-            tckt.TextoCentro("");
             tckt.TextoCentro("TELEFONO:77646295-63507961");
-            tckt.TextoCentro("");
-            tckt.TextoCentro("WIFI: "+wifi);
             tckt.CortaTicket();
             tckt.ImprimirTicket("TM-U330");
+            
         }
 
         private void DGridProductos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
