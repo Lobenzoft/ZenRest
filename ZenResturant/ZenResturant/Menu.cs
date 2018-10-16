@@ -18,7 +18,8 @@ namespace ZenResturant
 
         private void VentaButon_Click(object sender, EventArgs e)
         {
-
+            FBoletaVenta fBoletaventa = new FBoletaVenta();
+            Inicio.Cargarf(fBoletaventa);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,6 +32,18 @@ namespace ZenResturant
         {
             FProductos fproductos = new FProductos();
             Inicio.Cargarf(fproductos);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FInventarios finventarios = new FInventarios();
+            Inicio.Cargarf(finventarios);
+        }
+
+        private void CompraButon_Click(object sender, EventArgs e)
+        {
+            FBoletaCompra fboletacompra = new FBoletaCompra();
+            Inicio.Cargarf(fboletacompra);
         }
     }
 }

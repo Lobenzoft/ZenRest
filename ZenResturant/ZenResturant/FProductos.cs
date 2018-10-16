@@ -24,7 +24,7 @@ namespace ZenResturant
             //DGridProductos.Columns[0].Width = 1;
             DGridProductos.Columns[1].HeaderText = "Nombre";
             DGridProductos.Columns[2].HeaderText = "Codigo";
-            DGridProductos.Columns[3].HeaderText = "Inventario";
+            DGridProductos.Columns[3].HeaderText = "Precio";
         }
 
         private void BAgregarProducto_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace ZenResturant
         {
             if (MessageBox.Show("Confirme si desea eliminar", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                dataP.CrudProducto(DGridProductos.CurrentRow.Cells[0].Value.ToString(), "", "", "", "delete");
+                dataP.CrudProducto(DGridProductos.CurrentRow.Cells[0].Value.ToString(), "","0", "","", "delete");
                 CargarDataGrid();
             }
         }

@@ -37,7 +37,7 @@ namespace ZenResturant
         private void BAceptar_Click(object sender, EventArgs e)
         {
             string opcion_inventario = ComboOpcion.SelectedValue.ToString();
-            dataP.CrudProducto("0", TextNombre.Text, TextCodigo.Text, opcion_inventario, "new");
+            dataP.CrudProducto("0", TextNombre.Text,TextPrecio.Text, TextCodigo.Text, opcion_inventario, "new");
             CargarProducto();
         }
     }

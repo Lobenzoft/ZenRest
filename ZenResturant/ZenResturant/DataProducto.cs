@@ -18,13 +18,13 @@ namespace ZenResturant
             cn = new Cnx();
         }
 
-        public void CrudProducto(string id, string nombre, string codigo, string opcion_inventario, string accion)
+        public void CrudProducto(string id, string nombre,string precio, string codigo, string opcion_inventario, string accion)
         {
             //agregar-new
             //editar-update
             //eliminar-delete
             conexion = cn.AbrirConexion();
-            query = new MySqlCommand(string.Format("call crudProducto ({0},'{1}','{2}','{3}','{4}')", id, nombre, codigo, opcion_inventario, accion), conexion);
+            query = new MySqlCommand(string.Format("call crudProducto ({0},'{1}',{2},'{3}','{4}','{5}')", id, nombre,precio, codigo, opcion_inventario, accion), conexion);
             query.ExecuteNonQuery();
             cn.CerrarConexion();
         }
@@ -36,7 +36,7 @@ namespace ZenResturant
             //consulta-select
             DataTable datatable = new DataTable(); ;
             conexion = cn.AbrirConexion();
-            tabla = new MySqlDataAdapter(string.Format("call crudProducto ({0},'{1}','{2}','{3}','{4}')", 0, "", "", "", accion), conexion);
+            tabla = new MySqlDataAdapter(string.Format("call crudProducto ({0},'{1}',{2},'{3}','{4}','{5}')", 0, "", 0, "", "", accion), conexion);
             tabla.Fill(datatable);
             return datatable;
         }
@@ -46,7 +46,7 @@ namespace ZenResturant
             //consulta por id-selectId
             DataTable datatable = new DataTable(); ;
             conexion = cn.AbrirConexion();
-            tabla = new MySqlDataAdapter(string.Format("call crudProducto ({0},'{1}','{2}','{3}','{4}')", id, "", "", "", accion), conexion);
+            tabla = new MySqlDataAdapter(string.Format("call crudProducto ({0},'{1}',{2},'{3}','{4}','{5}')", id, "",0, "", "", accion), conexion);
             tabla.Fill(datatable);
             return datatable;
         }

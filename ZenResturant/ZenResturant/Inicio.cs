@@ -15,6 +15,7 @@ namespace ZenResturant
     public partial class Inicio : MetroForm
     {
         public static Panel ContenidoP;
+        public static string wifi = "0";
         public Inicio()
         {
             InitializeComponent();
@@ -24,6 +25,15 @@ namespace ZenResturant
             menu.Dock = DockStyle.Fill;
             MenuPanel.Controls.Add(menu);
             ContenidoP = ContenidoPanel;
+
+        }
+        public static void cambiarwifi(string _wifi)
+        {
+            wifi = _wifi;
+        }
+        public static string cambiarwifi()
+        {
+            return wifi;
         }
 
         public static void Cargarf(Control cont)

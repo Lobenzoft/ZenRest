@@ -21,6 +21,7 @@ namespace ZenResturant
             dataT = dataP.CrudProducto(id_producto, "selectId");
             DataRow row = dataT.Rows[0];
             TextNombre.Text = row["nombre_producto"].ToString();
+            TextCodigo.Text = row["precio_producto"].ToString();
             TextCodigo.Text = row["codigo_producto"].ToString();
             _id_producto = id_producto;
             List<string> Opciones = new List<string>();
@@ -46,7 +47,7 @@ namespace ZenResturant
         private void BAceptar_Click(object sender, EventArgs e)
         {
             string opcion_inventario = ComboOpcion.SelectedValue.ToString();
-            dataP.CrudProducto(_id_producto, TextNombre.Text, TextCodigo.Text, opcion_inventario, "update");
+            dataP.CrudProducto(_id_producto, TextNombre.Text,TextPrecio.Text, TextCodigo.Text, opcion_inventario, "update");
             CargarFProductos();
         }
 
