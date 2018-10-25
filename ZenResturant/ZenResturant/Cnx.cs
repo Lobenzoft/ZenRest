@@ -13,7 +13,7 @@ namespace ZenResturant
 
         public Cnx()
         {
-            Conexion = new MySqlConnection("Server=127.0.0.1;Port=3306;Database=zen-restaurant;Uid=root;Pwd='';SslMode=none");
+            Conexion = new MySqlConnection("Server=127.0.0.1;Port=3306;Database=zen-restaurant;Uid=root;Pwd='';");
         }
 
         public MySqlConnection AbrirConexion()

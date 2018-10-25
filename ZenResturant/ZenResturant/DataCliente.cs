@@ -50,7 +50,7 @@ namespace ZenResturant
             //consulta por id-selectId
             DataTable datatable = new DataTable();
             conexion = cn.AbrirConexion();
-            tabla = new MySqlDataAdapter(string.Format("call crudCliente ({0},'{1}','{2}','{3}','{4}')", 0, "", "", "", accion), conexion);
+            tabla = new MySqlDataAdapter(string.Format("call crudCliente ({0},'{1}','{2}','{3}','{4}')", 0, "", ci, "", accion), conexion);
             tabla.Fill(datatable);
             return datatable;
         }

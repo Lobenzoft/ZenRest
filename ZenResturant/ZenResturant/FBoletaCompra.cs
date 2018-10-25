@@ -18,18 +18,59 @@ namespace ZenResturant
             InitializeComponent();
             dataC = new DataCompra();
             dataP = new DataProducto();
-            DGridLista.DataSource = dataP.CrudProducto("select");
-            DGridLista.Columns[0].Visible = false;
-            DGridLista.Columns[1].HeaderText = "Nombre";
-            DGridLista.Columns[2].HeaderText = "Codigo";
-            DGridLista.Columns[3].Visible = false;
-            DGridLista.Columns[4].Visible = false;
+            DGridListaD.DataSource = dataP.CrudProductoCategoria("selectCategoria","Desayuno");
+            DGridListaD.Columns[0].Visible = false;
+            DGridListaD.Columns[1].HeaderText = "Nombre";
+            DGridListaD.Columns[2].Visible = false;
+            DGridListaD.Columns[3].HeaderText = "Codigo";
+            DGridListaD.Columns[4].Visible = false;
+            DGridListaD.Columns[5].HeaderText = "Inventario";
+
+            DGridListaA.DataSource = dataP.CrudProductoCategoria("selectCategoria", "Almuerzo");
+            DGridListaA.Columns[0].Visible = false;
+            DGridListaA.Columns[1].HeaderText = "Nombre";
+            DGridListaA.Columns[2].Visible = false;
+            DGridListaA.Columns[3].HeaderText = "Codigo";
+            DGridListaA.Columns[4].Visible = false;
+            DGridListaA.Columns[5].HeaderText = "Inventario";
+
+            DGridListaC.DataSource = dataP.CrudProductoCategoria("selectCategoria", "Cena");
+            DGridListaC.Columns[0].Visible = false;
+            DGridListaC.Columns[1].HeaderText = "Nombre";
+            DGridListaC.Columns[2].Visible = false;
+            DGridListaC.Columns[3].HeaderText = "Codigo";
+            DGridListaC.Columns[4].Visible = false;
+            DGridListaC.Columns[5].HeaderText = "Inventario";
+
+            DGridListaB.DataSource = dataP.CrudProductoCategoria("selectCategoria", "Bebidas");
+            DGridListaB.Columns[0].Visible = false;
+            DGridListaB.Columns[1].HeaderText = "Nombre";
+            DGridListaB.Columns[2].Visible = false;
+            DGridListaB.Columns[3].HeaderText = "Codigo";
+            DGridListaB.Columns[4].Visible = false;
+            DGridListaB.Columns[5].HeaderText = "Inventario";
+
+            DGridListaE.DataSource = dataP.CrudProductoCategoria("selectCategoria", "Extras");
+            DGridListaE.Columns[0].Visible = false;
+            DGridListaE.Columns[1].HeaderText = "Nombre";
+            DGridListaE.Columns[2].Visible = false;
+            DGridListaE.Columns[3].HeaderText = "Codigo";
+            DGridListaE.Columns[4].Visible = false;
+            DGridListaE.Columns[5].HeaderText = "Inventario";
+
+            DGridListaCompras.DataSource = dataP.CrudProductoCategoria("selectCategoria", "Compras");
+            DGridListaCompras.Columns[0].Visible = false;
+            DGridListaCompras.Columns[1].HeaderText = "Nombre";
+            DGridListaCompras.Columns[2].Visible = false;
+            DGridListaCompras.Columns[3].HeaderText = "Codigo";
+            DGridListaCompras.Columns[4].Visible = false;
+            DGridListaCompras.Columns[5].HeaderText = "Inventario";
 
         }
 
         private void DGridLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            DGridProductos.Rows.Add(DGridLista.CurrentRow.Cells[2].Value, DGridLista.CurrentRow.Cells[1].Value, 0,0);
+            DGridProductos.Rows.Add(DGridListaD.CurrentRow.Cells[3].Value, DGridListaD.CurrentRow.Cells[1].Value, 0,0);
         }
 
         private void DGridProductos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -64,6 +105,31 @@ namespace ZenResturant
             }
             FBoletaCompra fboletacompra = new FBoletaCompra();
             Inicio.Cargarf(fboletacompra);
+        }
+
+        private void DGridListaA_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DGridProductos.Rows.Add(DGridListaA.CurrentRow.Cells[3].Value, DGridListaA.CurrentRow.Cells[1].Value, 0, 0);
+        }
+
+        private void DGridListaC_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DGridProductos.Rows.Add(DGridListaC.CurrentRow.Cells[3].Value, DGridListaC.CurrentRow.Cells[1].Value, 0, 0);
+        }
+
+        private void DGridListaB_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DGridProductos.Rows.Add(DGridListaB.CurrentRow.Cells[3].Value, DGridListaB.CurrentRow.Cells[1].Value, 0, 0);
+        }
+
+        private void DGridListaE_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DGridProductos.Rows.Add(DGridListaE.CurrentRow.Cells[3].Value, DGridListaE.CurrentRow.Cells[1].Value, 0, 0);
+        }
+
+        private void DGridListaCompras_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DGridProductos.Rows.Add(DGridListaCompras.CurrentRow.Cells[3].Value, DGridListaCompras.CurrentRow.Cells[1].Value, 0, 0);
         }
     }
 }

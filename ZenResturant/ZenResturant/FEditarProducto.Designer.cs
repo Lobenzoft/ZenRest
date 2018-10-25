@@ -38,6 +38,8 @@
             this.TextNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.TextPrecio = new System.Windows.Forms.TextBox();
+            this.ComboCategoria = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ComboOpcion
@@ -46,7 +48,7 @@
             this.ComboOpcion.Enabled = false;
             this.ComboOpcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComboOpcion.FormattingEnabled = true;
-            this.ComboOpcion.Location = new System.Drawing.Point(15, 240);
+            this.ComboOpcion.Location = new System.Drawing.Point(15, 300);
             this.ComboOpcion.Name = "ComboOpcion";
             this.ComboOpcion.Size = new System.Drawing.Size(150, 21);
             this.ComboOpcion.TabIndex = 24;
@@ -84,9 +86,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 224);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 13);
+            this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 21;
-            this.label3.Text = "Producto de Invetario";
+            this.label3.Text = "Categoria";
             // 
             // label2
             // 
@@ -137,11 +139,32 @@
             this.TextPrecio.Size = new System.Drawing.Size(150, 20);
             this.TextPrecio.TabIndex = 25;
             // 
+            // ComboCategoria
+            // 
+            this.ComboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ComboCategoria.FormattingEnabled = true;
+            this.ComboCategoria.Location = new System.Drawing.Point(15, 240);
+            this.ComboCategoria.Name = "ComboCategoria";
+            this.ComboCategoria.Size = new System.Drawing.Size(150, 21);
+            this.ComboCategoria.TabIndex = 27;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 284);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(109, 13);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Producto de Invetario";
+            // 
             // FEditarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.ComboCategoria);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.TextPrecio);
             this.Controls.Add(this.ComboOpcion);
@@ -171,5 +194,7 @@
         private System.Windows.Forms.TextBox TextNombre;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TextPrecio;
+        private System.Windows.Forms.ComboBox ComboCategoria;
+        private System.Windows.Forms.Label label5;
     }
 }

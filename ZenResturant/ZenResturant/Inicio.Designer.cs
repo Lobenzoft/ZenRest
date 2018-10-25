@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.MenuPanel = new System.Windows.Forms.Panel();
             this.ContenidoPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ContenidoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuPanel
@@ -43,11 +47,22 @@
             // 
             // ContenidoPanel
             // 
-            this.ContenidoPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ContenidoPanel.Controls.Add(this.pictureBox1);
             this.ContenidoPanel.Location = new System.Drawing.Point(0, 50);
             this.ContenidoPanel.Name = "ContenidoPanel";
             this.ContenidoPanel.Size = new System.Drawing.Size(1084, 639);
             this.ContenidoPanel.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1084, 639);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Inicio
             // 
@@ -58,11 +73,15 @@
             this.Controls.Add(this.ContenidoPanel);
             this.Controls.Add(this.MenuPanel);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "NannyGourmet";
+            this.ContenidoPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -71,6 +90,7 @@
 
         private System.Windows.Forms.Panel MenuPanel;
         private System.Windows.Forms.Panel ContenidoPanel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

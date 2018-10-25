@@ -20,7 +20,16 @@ namespace ZenResturant
             Opciones.Add("Si");
             Opciones.Add("No");
             ComboOpcion.DataSource = Opciones;
-            ComboOpcion.SelectedIndex = 0;
+            ComboOpcion.SelectedIndex = 1;
+            List<string> Categorias = new List<string>();
+            Categorias.Add("Desayuno");
+            Categorias.Add("Almuerzo");
+            Categorias.Add("Cena");
+            Categorias.Add("Bebidas");
+            Categorias.Add("Extras");
+            Categorias.Add("Compras");
+            ComboCategoria.DataSource = Categorias;
+            ComboCategoria.SelectedIndex = 0;
         }
 
         private void CargarProducto()
@@ -37,8 +46,14 @@ namespace ZenResturant
         private void BAceptar_Click(object sender, EventArgs e)
         {
             string opcion_inventario = ComboOpcion.SelectedValue.ToString();
-            dataP.CrudProducto("0", TextNombre.Text,TextPrecio.Text, TextCodigo.Text, opcion_inventario, "new");
+            string categoria = ComboCategoria.SelectedValue.ToString();
+            dataP.CrudProducto("0", TextNombre.Text, categoria,TextPrecio.Text, TextCodigo.Text, opcion_inventario, "new");
             CargarProducto();
+        }
+
+        private void TextNombre_TextChanged(object sender, EventArgs e)
+        {
+            TextCodigo.Text = "Cod.-" + TextNombre.Text;
         }
     }
 }

@@ -38,6 +38,9 @@
     <PlatformTarget>x86</PlatformTarget>
     <OutputPath>bin\x86\Release\</OutputPath>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>zen-b.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=14.1.0.14, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -73,6 +76,7 @@
     <Compile Include="DataCompra.cs" />
     <Compile Include="DataInventario.cs" />
     <Compile Include="DataProducto.cs" />
+    <Compile Include="DataReporte.cs" />
     <Compile Include="DataVenta.cs" />
     <Compile Include="FAgregarClientes.cs">
       <SubType>UserControl</SubType>
@@ -128,6 +132,12 @@
     <Compile Include="FProductos.Designer.cs">
       <DependentUpon>FProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FReportes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FReportes.Designer.cs">
+      <DependentUpon>FReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +180,9 @@
     <EmbeddedResource Include="FProductos.resx">
       <DependentUpon>FProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FReportes.resx">
+      <DependentUpon>FReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +207,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="zen-b.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

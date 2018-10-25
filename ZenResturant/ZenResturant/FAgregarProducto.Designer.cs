@@ -35,9 +35,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TextCodigo = new System.Windows.Forms.TextBox();
             this.TextNombre = new System.Windows.Forms.TextBox();
-            this.ComboOpcion = new System.Windows.Forms.ComboBox();
+            this.ComboCategoria = new System.Windows.Forms.ComboBox();
             this.TextPrecio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.ComboOpcion = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BCancelar
@@ -47,7 +49,7 @@
             this.BCancelar.Location = new System.Drawing.Point(312, 271);
             this.BCancelar.Name = "BCancelar";
             this.BCancelar.Size = new System.Drawing.Size(110, 45);
-            this.BCancelar.TabIndex = 15;
+            this.BCancelar.TabIndex = 7;
             this.BCancelar.TabStop = false;
             this.BCancelar.Text = "Cancelar";
             this.BCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -61,7 +63,7 @@
             this.BAceptar.Location = new System.Drawing.Point(192, 271);
             this.BAceptar.Name = "BAceptar";
             this.BAceptar.Size = new System.Drawing.Size(110, 45);
-            this.BAceptar.TabIndex = 14;
+            this.BAceptar.TabIndex = 6;
             this.BAceptar.TabStop = false;
             this.BAceptar.Text = "Aceptar";
             this.BAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -73,9 +75,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 224);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 13);
+            this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Producto de Invetario";
+            this.label3.Text = "Categoria";
             // 
             // label2
             // 
@@ -100,31 +102,33 @@
             this.TextCodigo.Location = new System.Drawing.Point(15, 120);
             this.TextCodigo.Name = "TextCodigo";
             this.TextCodigo.Size = new System.Drawing.Size(150, 20);
-            this.TextCodigo.TabIndex = 9;
+            this.TextCodigo.TabIndex = 2;
             // 
             // TextNombre
             // 
             this.TextNombre.Location = new System.Drawing.Point(15, 60);
             this.TextNombre.Name = "TextNombre";
             this.TextNombre.Size = new System.Drawing.Size(150, 20);
-            this.TextNombre.TabIndex = 8;
+            this.TextNombre.TabIndex = 1;
+            this.TextNombre.TextChanged += new System.EventHandler(this.TextNombre_TextChanged);
             // 
-            // ComboOpcion
+            // ComboCategoria
             // 
-            this.ComboOpcion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboOpcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ComboOpcion.FormattingEnabled = true;
-            this.ComboOpcion.Location = new System.Drawing.Point(15, 240);
-            this.ComboOpcion.Name = "ComboOpcion";
-            this.ComboOpcion.Size = new System.Drawing.Size(150, 21);
-            this.ComboOpcion.TabIndex = 16;
+            this.ComboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ComboCategoria.FormattingEnabled = true;
+            this.ComboCategoria.Location = new System.Drawing.Point(15, 240);
+            this.ComboCategoria.Name = "ComboCategoria";
+            this.ComboCategoria.Size = new System.Drawing.Size(150, 21);
+            this.ComboCategoria.TabIndex = 4;
             // 
             // TextPrecio
             // 
             this.TextPrecio.Location = new System.Drawing.Point(15, 180);
             this.TextPrecio.Name = "TextPrecio";
             this.TextPrecio.Size = new System.Drawing.Size(150, 20);
-            this.TextPrecio.TabIndex = 17;
+            this.TextPrecio.TabIndex = 3;
+            this.TextPrecio.Text = "0.00";
             // 
             // label4
             // 
@@ -135,14 +139,35 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "Precio Producto";
             // 
+            // ComboOpcion
+            // 
+            this.ComboOpcion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboOpcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ComboOpcion.FormattingEnabled = true;
+            this.ComboOpcion.Location = new System.Drawing.Point(15, 300);
+            this.ComboOpcion.Name = "ComboOpcion";
+            this.ComboOpcion.Size = new System.Drawing.Size(150, 21);
+            this.ComboOpcion.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 284);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(109, 13);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Producto de Invetario";
+            // 
             // FAgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.ComboOpcion);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.TextPrecio);
-            this.Controls.Add(this.ComboOpcion);
+            this.Controls.Add(this.ComboCategoria);
             this.Controls.Add(this.BCancelar);
             this.Controls.Add(this.BAceptar);
             this.Controls.Add(this.label3);
@@ -166,8 +191,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TextCodigo;
         private System.Windows.Forms.TextBox TextNombre;
-        private System.Windows.Forms.ComboBox ComboOpcion;
+        private System.Windows.Forms.ComboBox ComboCategoria;
         private System.Windows.Forms.TextBox TextPrecio;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox ComboOpcion;
+        private System.Windows.Forms.Label label5;
     }
 }

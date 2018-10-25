@@ -45,5 +45,11 @@ namespace ZenResturant
             FBoletaCompra fboletacompra = new FBoletaCompra();
             Inicio.Cargarf(fboletacompra);
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FReportes frepores = new FReportes();
+            Inicio.Cargarf(frepores);
+        }
     }
 }

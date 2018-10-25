@@ -25,6 +25,7 @@ namespace ZenResturant
             menu.Dock = DockStyle.Fill;
             MenuPanel.Controls.Add(menu);
             ContenidoP = ContenidoPanel;
+            ContenidoPanel.BackColor = Color.White;
 
         }
         public static void cambiarwifi(string _wifi)
