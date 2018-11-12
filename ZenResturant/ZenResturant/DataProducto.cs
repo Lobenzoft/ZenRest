@@ -60,5 +60,16 @@ namespace ZenResturant
             tabla.Fill(datatable);
             return datatable;
         }
+
+        public DataTable CrudBuscarProducto(string nombre, string categoria, string accion)
+        {
+            //consulta por id-selectId
+            DataTable datatable = new DataTable();
+            conexion = cn.AbrirConexion();
+            string consulta = string.Format("call crudProducto ({0},'{1}%','{2}',{3},'{4}','{5}','{6}')", 0, nombre, categoria, 0, "", "", accion);
+            tabla = new MySqlDataAdapter(consulta,conexion);
+            tabla.Fill(datatable);
+            return datatable;
+        }
     }
 }

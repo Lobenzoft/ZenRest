@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FEditarProducto));
             this.ComboOpcion = new System.Windows.Forms.ComboBox();
             this.BCancelar = new System.Windows.Forms.Button();
             this.BAceptar = new System.Windows.Forms.Button();
@@ -56,6 +57,7 @@
             // BCancelar
             // 
             this.BCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCancelar.Image = ((System.Drawing.Image)(resources.GetObject("BCancelar.Image")));
             this.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BCancelar.Location = new System.Drawing.Point(312, 271);
             this.BCancelar.Name = "BCancelar";
@@ -70,6 +72,7 @@
             // BAceptar
             // 
             this.BAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAceptar.Image = ((System.Drawing.Image)(resources.GetObject("BAceptar.Image")));
             this.BAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BAceptar.Location = new System.Drawing.Point(192, 271);
             this.BAceptar.Name = "BAceptar";
@@ -118,6 +121,7 @@
             // 
             // TextNombre
             // 
+            this.TextNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TextNombre.Location = new System.Drawing.Point(15, 60);
             this.TextNombre.Name = "TextNombre";
             this.TextNombre.Size = new System.Drawing.Size(150, 20);

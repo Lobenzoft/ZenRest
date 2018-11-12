@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FAgregarClientes));
             this.TextNombre = new System.Windows.Forms.TextBox();
             this.TextCINIT = new System.Windows.Forms.TextBox();
             this.TextCelular = new System.Windows.Forms.TextBox();
@@ -40,10 +41,12 @@
             // 
             // TextNombre
             // 
+            this.TextNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TextNombre.Location = new System.Drawing.Point(15, 60);
             this.TextNombre.Name = "TextNombre";
             this.TextNombre.Size = new System.Drawing.Size(150, 20);
             this.TextNombre.TabIndex = 0;
+            this.TextNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextNombre_KeyPress);
             // 
             // TextCINIT
             // 
@@ -58,6 +61,7 @@
             this.TextCelular.Name = "TextCelular";
             this.TextCelular.Size = new System.Drawing.Size(150, 20);
             this.TextCelular.TabIndex = 2;
+            this.TextCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextCelular_KeyPress);
             // 
             // label1
             // 
@@ -89,6 +93,7 @@
             // BAceptar
             // 
             this.BAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAceptar.Image = ((System.Drawing.Image)(resources.GetObject("BAceptar.Image")));
             this.BAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BAceptar.Location = new System.Drawing.Point(180, 210);
             this.BAceptar.Name = "BAceptar";
@@ -103,6 +108,7 @@
             // BCancelar
             // 
             this.BCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCancelar.Image = ((System.Drawing.Image)(resources.GetObject("BCancelar.Image")));
             this.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BCancelar.Location = new System.Drawing.Point(300, 210);
             this.BCancelar.Name = "BCancelar";

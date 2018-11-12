@@ -28,20 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FReportes));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.texTotal = new System.Windows.Forms.TextBox();
             this.DGridCompras = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtTotalVentas = new System.Windows.Forms.TextBox();
+            this.DGridVentas = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.DGridVentas = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGridCompras)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGridVentas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -56,6 +64,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.texTotal);
             this.tabPage1.Controls.Add(this.DGridCompras);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -65,16 +75,21 @@
             this.tabPage1.Text = "Compras";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // label3
             // 
-            this.tabPage2.Controls.Add(this.DGridVentas);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1073, 569);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Ventas";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(772, 543);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "TOTAL COMPRAS";
+            // 
+            // texTotal
+            // 
+            this.texTotal.Location = new System.Drawing.Point(875, 536);
+            this.texTotal.Name = "texTotal";
+            this.texTotal.Size = new System.Drawing.Size(195, 20);
+            this.texTotal.TabIndex = 10;
             // 
             // DGridCompras
             // 
@@ -91,8 +106,56 @@
             this.DGridCompras.RowHeadersWidth = 10;
             this.DGridCompras.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DGridCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGridCompras.Size = new System.Drawing.Size(1067, 563);
+            this.DGridCompras.Size = new System.Drawing.Size(1067, 519);
             this.DGridCompras.TabIndex = 9;
+            this.DGridCompras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGridCompras_CellContentClick);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.txtTotalVentas);
+            this.tabPage2.Controls.Add(this.DGridVentas);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1073, 569);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Ventas";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(778, 540);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "TOTAL VENTAS";
+            // 
+            // txtTotalVentas
+            // 
+            this.txtTotalVentas.Location = new System.Drawing.Point(875, 533);
+            this.txtTotalVentas.Name = "txtTotalVentas";
+            this.txtTotalVentas.Size = new System.Drawing.Size(195, 20);
+            this.txtTotalVentas.TabIndex = 12;
+            // 
+            // DGridVentas
+            // 
+            this.DGridVentas.AllowUserToAddRows = false;
+            this.DGridVentas.AllowUserToDeleteRows = false;
+            this.DGridVentas.AllowUserToResizeColumns = false;
+            this.DGridVentas.AllowUserToResizeRows = false;
+            this.DGridVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGridVentas.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.DGridVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGridVentas.Location = new System.Drawing.Point(3, 3);
+            this.DGridVentas.Name = "DGridVentas";
+            this.DGridVentas.ReadOnly = true;
+            this.DGridVentas.RowHeadersWidth = 10;
+            this.DGridVentas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.DGridVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGridVentas.Size = new System.Drawing.Size(1067, 514);
+            this.DGridVentas.TabIndex = 10;
             // 
             // dateTimePicker1
             // 
@@ -128,29 +191,38 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Hasta";
             // 
-            // DGridVentas
+            // button1
             // 
-            this.DGridVentas.AllowUserToAddRows = false;
-            this.DGridVentas.AllowUserToDeleteRows = false;
-            this.DGridVentas.AllowUserToResizeColumns = false;
-            this.DGridVentas.AllowUserToResizeRows = false;
-            this.DGridVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DGridVentas.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.DGridVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGridVentas.Location = new System.Drawing.Point(3, 3);
-            this.DGridVentas.Name = "DGridVentas";
-            this.DGridVentas.ReadOnly = true;
-            this.DGridVentas.RowHeadersWidth = 10;
-            this.DGridVentas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.DGridVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGridVentas.Size = new System.Drawing.Size(1067, 563);
-            this.DGridVentas.TabIndex = 10;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(555, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 45);
+            this.button1.TabIndex = 16;
+            this.button1.TabStop = false;
+            this.button1.Text = "Exportar a Excel";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(235, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
             // 
             // FReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker2);
@@ -160,9 +232,12 @@
             this.Size = new System.Drawing.Size(1084, 639);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGridCompras)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGridVentas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,5 +254,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView DGridVentas;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox texTotal;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtTotalVentas;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

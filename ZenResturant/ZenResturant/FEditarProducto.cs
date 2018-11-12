@@ -86,6 +86,7 @@ namespace ZenResturant
 
         private void BAceptar_Click(object sender, EventArgs e)
         {
+
             string opcion_inventario = ComboOpcion.SelectedValue.ToString();
             string categoria = ComboCategoria.SelectedValue.ToString();
             dataP.CrudProducto(_id_producto, TextNombre.Text,categoria,TextPrecio.Text, TextCodigo.Text, opcion_inventario, "update");

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FClientes));
             this.BAgregarCliente = new System.Windows.Forms.Button();
             this.BEditarCliente = new System.Windows.Forms.Button();
             this.BEliminarCliente = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@
             // BAgregarCliente
             // 
             this.BAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAgregarCliente.Image = ((System.Drawing.Image)(resources.GetObject("BAgregarCliente.Image")));
             this.BAgregarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BAgregarCliente.Location = new System.Drawing.Point(3, 3);
             this.BAgregarCliente.Name = "BAgregarCliente";
@@ -52,6 +54,7 @@
             // BEditarCliente
             // 
             this.BEditarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BEditarCliente.Image = ((System.Drawing.Image)(resources.GetObject("BEditarCliente.Image")));
             this.BEditarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BEditarCliente.Location = new System.Drawing.Point(119, 3);
             this.BEditarCliente.Name = "BEditarCliente";
@@ -66,6 +69,7 @@
             // BEliminarCliente
             // 
             this.BEliminarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BEliminarCliente.Image = ((System.Drawing.Image)(resources.GetObject("BEliminarCliente.Image")));
             this.BEliminarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BEliminarCliente.Location = new System.Drawing.Point(235, 3);
             this.BEliminarCliente.Name = "BEliminarCliente";

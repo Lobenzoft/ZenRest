@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FBoletaVenta));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,13 +62,14 @@
             this.DGridListaB = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.DGridListaE = new System.Windows.Forms.DataGridView();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.DGridListaCompras = new System.Windows.Forms.DataGridView();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBuscador = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnQutarfila = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGridProductos)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -80,8 +82,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGridListaB)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGridListaE)).BeginInit();
-            this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGridListaCompras)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -122,15 +122,15 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(10, 69);
+            this.dateTimePicker1.Location = new System.Drawing.Point(83, 69);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(199, 20);
             this.dateTimePicker1.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 53);
+            this.label3.Location = new System.Drawing.Point(80, 53);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 5;
@@ -139,7 +139,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(285, 53);
+            this.label4.Location = new System.Drawing.Point(291, 53);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 6;
@@ -263,11 +263,14 @@
             // AceptarVenta
             // 
             this.AceptarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AceptarVenta.Location = new System.Drawing.Point(580, 59);
+            this.AceptarVenta.Image = ((System.Drawing.Image)(resources.GetObject("AceptarVenta.Image")));
+            this.AceptarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AceptarVenta.Location = new System.Drawing.Point(560, 53);
             this.AceptarVenta.Name = "AceptarVenta";
-            this.AceptarVenta.Size = new System.Drawing.Size(80, 30);
+            this.AceptarVenta.Size = new System.Drawing.Size(100, 36);
             this.AceptarVenta.TabIndex = 17;
             this.AceptarVenta.Text = "Vender";
+            this.AceptarVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AceptarVenta.UseVisualStyleBackColor = true;
             this.AceptarVenta.Click += new System.EventHandler(this.AceptarVenta_Click);
             // 
@@ -296,12 +299,12 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Location = new System.Drawing.Point(672, 5);
+            this.tabControl1.Location = new System.Drawing.Point(672, 53);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(410, 631);
+            this.tabControl1.Size = new System.Drawing.Size(410, 583);
             this.tabControl1.TabIndex = 20;
+            this.tabControl1.TabIndexChanged += new System.EventHandler(this.tabControl1_TabIndexChanged);
             // 
             // tabPage1
             // 
@@ -309,7 +312,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(402, 605);
+            this.tabPage1.Size = new System.Drawing.Size(402, 557);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Desayuno";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -340,7 +343,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(402, 605);
+            this.tabPage2.Size = new System.Drawing.Size(402, 557);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Alumerzo";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -362,6 +365,7 @@
             this.DGridListaA.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGridListaA.Size = new System.Drawing.Size(400, 600);
             this.DGridListaA.TabIndex = 10;
+            this.DGridListaA.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGridListaA_CellContentClick);
             this.DGridListaA.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGridListaA_CellDoubleClick);
             // 
             // tabPage3
@@ -370,7 +374,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(402, 605);
+            this.tabPage3.Size = new System.Drawing.Size(402, 557);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Cena";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -400,7 +404,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(402, 605);
+            this.tabPage4.Size = new System.Drawing.Size(402, 557);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Bebidas";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -430,7 +434,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(402, 605);
+            this.tabPage5.Size = new System.Drawing.Size(402, 557);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Extras";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -453,36 +457,6 @@
             this.DGridListaE.Size = new System.Drawing.Size(400, 600);
             this.DGridListaE.TabIndex = 11;
             this.DGridListaE.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGridListaE_CellDoubleClick);
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.DGridListaCompras);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(402, 605);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Compras";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // DGridListaCompras
-            // 
-            this.DGridListaCompras.AllowUserToAddRows = false;
-            this.DGridListaCompras.AllowUserToDeleteRows = false;
-            this.DGridListaCompras.AllowUserToResizeColumns = false;
-            this.DGridListaCompras.AllowUserToResizeRows = false;
-            this.DGridListaCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DGridListaCompras.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.DGridListaCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGridListaCompras.Location = new System.Drawing.Point(1, 2);
-            this.DGridListaCompras.Name = "DGridListaCompras";
-            this.DGridListaCompras.ReadOnly = true;
-            this.DGridListaCompras.RowHeadersWidth = 10;
-            this.DGridListaCompras.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.DGridListaCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGridListaCompras.Size = new System.Drawing.Size(400, 600);
-            this.DGridListaCompras.TabIndex = 11;
-            this.DGridListaCompras.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGridListaCompras_CellDoubleClick);
             // 
             // textBox8
             // 
@@ -527,18 +501,54 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(522, 72);
+            this.checkBox1.Location = new System.Drawing.Point(498, 72);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(52, 17);
             this.checkBox1.TabIndex = 25;
             this.checkBox1.Text = "Mesa";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // textBuscador
+            // 
+            this.textBuscador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBuscador.Location = new System.Drawing.Point(726, 27);
+            this.textBuscador.Name = "textBuscador";
+            this.textBuscador.Size = new System.Drawing.Size(174, 20);
+            this.textBuscador.TabIndex = 26;
+            this.textBuscador.TextChanged += new System.EventHandler(this.textBuscador_TextChanged);
+            this.textBuscador.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox10_KeyUp);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(669, 30);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(51, 13);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "BUSCAR";
+            // 
+            // btnQutarfila
+            // 
+            this.btnQutarfila.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQutarfila.Image = ((System.Drawing.Image)(resources.GetObject("btnQutarfila.Image")));
+            this.btnQutarfila.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQutarfila.Location = new System.Drawing.Point(4, 56);
+            this.btnQutarfila.Name = "btnQutarfila";
+            this.btnQutarfila.Size = new System.Drawing.Size(74, 36);
+            this.btnQutarfila.TabIndex = 28;
+            this.btnQutarfila.Text = "Elimi. F.";
+            this.btnQutarfila.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnQutarfila.UseVisualStyleBackColor = true;
+            this.btnQutarfila.Click += new System.EventHandler(this.btnQutarfila_Click);
+            // 
             // FBoletaVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnQutarfila);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBuscador);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -577,8 +587,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGridListaB)).EndInit();
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGridListaE)).EndInit();
-            this.tabPage6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGridListaCompras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -619,12 +627,13 @@
         private System.Windows.Forms.DataGridView DGridListaB;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.DataGridView DGridListaE;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.DataGridView DGridListaCompras;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox textBuscador;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnQutarfila;
     }
 }

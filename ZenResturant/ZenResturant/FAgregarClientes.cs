@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DevComponents.DotNetBar;
 
 namespace ZenResturant
 {
@@ -26,13 +27,33 @@ namespace ZenResturant
 
         private void BAceptar_Click(object sender, EventArgs e)
         {
-            dataC.CrudCliente("0", TextNombre.Text, TextCINIT.Text, TextCelular.Text, "new");
-            CargarClientes();
+            if (TextNombre.Text !="" )
+            {
+                    dataC.CrudCliente("0", TextNombre.Text, TextCINIT.Text, TextCelular.Text, "new");
+                    CargarClientes();
+            }
+            else
+            {
+            
+                MessageBoxEx.Show("Debe ingresar datos en todos los campos", "Alerta!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+              
+            }
+            
         }
 
         private void BCancelar_Click(object sender, EventArgs e)
         {
             CargarClientes();
+        }
+
+        private void TextNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.SoloLetras(e);
+        }
+
+        private void TextCelular_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.SoloNumeros(e);
         }
     }
 }

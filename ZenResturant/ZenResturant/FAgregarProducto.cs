@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DevComponents.DotNetBar;
 
 namespace ZenResturant
 {
@@ -45,15 +46,23 @@ namespace ZenResturant
 
         private void BAceptar_Click(object sender, EventArgs e)
         {
-            string opcion_inventario = ComboOpcion.SelectedValue.ToString();
-            string categoria = ComboCategoria.SelectedValue.ToString();
-            dataP.CrudProducto("0", TextNombre.Text, categoria,TextPrecio.Text, TextCodigo.Text, opcion_inventario, "new");
-            CargarProducto();
+            if (TextNombre.Text !="" ) { 
+                string opcion_inventario = ComboOpcion.SelectedValue.ToString();
+                string categoria = ComboCategoria.SelectedValue.ToString();
+                dataP.CrudProducto("0", TextNombre.Text, categoria,TextPrecio.Text, TextCodigo.Text, opcion_inventario, "new");
+                CargarProducto();
+            }
+            else
+            {
+                MessageBoxEx.Show("Debe llenar todos los datos correspondientes", "Advertencia", MessageBoxButtons.OK);
+            }
         }
 
         private void TextNombre_TextChanged(object sender, EventArgs e)
         {
-            TextCodigo.Text = "Cod.-" + TextNombre.Text;
+            TextCodigo.Text = "COD.-" + TextNombre.Text;
         }
+
+       
     }
 }

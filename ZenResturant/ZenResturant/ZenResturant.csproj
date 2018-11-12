@@ -51,11 +51,21 @@
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
     <Reference Include="DevComponents.Instrumentation, Version=14.1.0.14, Culture=neutral, PublicKeyToken=f90dc37c26666a67" />
+    <Reference Include="itextsharp, Version=5.4.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x86\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\x86\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data">
       <HintPath>..\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -78,6 +88,8 @@
     <Compile Include="DataProducto.cs" />
     <Compile Include="DataReporte.cs" />
     <Compile Include="DataVenta.cs" />
+    <Compile Include="excel.cs" />
+    <Compile Include="Excel_Export.cs" />
     <Compile Include="FAgregarClientes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +165,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ticket.cs" />
+    <Compile Include="Validaciones.cs" />
     <EmbeddedResource Include="FAgregarClientes.resx">
       <DependentUpon>FAgregarClientes.cs</DependentUpon>
     </EmbeddedResource>

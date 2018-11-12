@@ -21,11 +21,35 @@ namespace ZenResturant
         private void CargarDataGrid()
         {
             DGridProductos.DataSource = dataP.CrudProducto("select");
-            //DGridProductos.Columns[0].Width = 1;
+            DGridProductos.Columns[0].Visible = false;
             DGridProductos.Columns[1].HeaderText = "Nombre";
             DGridProductos.Columns[2].HeaderText = "Categoria";
             DGridProductos.Columns[3].HeaderText = "Codigo";
             DGridProductos.Columns[4].HeaderText = "Precio";
+
+            //DGridProductos.Columns[0].Width = 17;
+            DGridProductos.Columns[1].Width = 200;
+
+
+
+
+
+
+
+
+
+
+            List<string> Categorias = new List<string>();
+            Categorias.Add("Desayuno");
+            Categorias.Add("Almuerzo");
+            Categorias.Add("Cena");
+            Categorias.Add("Bebidas");
+            Categorias.Add("Extras");
+            Categorias.Add("Compras");
+            ComboCategoriaB.DataSource = Categorias;
+            ComboCategoriaB.SelectedIndex = 3;
+
+
         }
 
         private void BAgregarProducto_Click(object sender, EventArgs e)
@@ -48,5 +72,20 @@ namespace ZenResturant
                 CargarDataGrid();
             }
         }
+
+        private void textBuscadorP_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string categoria = ComboCategoriaB.SelectedValue.ToString();
+                DGridProductos.DataSource = dataP.CrudBuscarProducto(textBuscadorP.Text, categoria, "selectLIKE");
+            }
+            catch(Exception ex)
+            {
+
+            }
+           
+        }
+        
     }
 }

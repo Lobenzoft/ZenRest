@@ -70,5 +70,14 @@ namespace ZenResturant
             tabla.Fill(datatable);
             return datatable;
         }
+        public DataTable CrudVenta(string accion,string categoria,string buscador)
+        {
+            //consulta-select
+            DataTable datatable = new DataTable();
+            conexion = cn.AbrirConexion();
+            tabla = new MySqlDataAdapter(string.Format("call crudBuscador ('{0}','{1}','{2}')", accion,categoria,buscador), conexion);
+            tabla.Fill(datatable);
+            return datatable;
+        }
     }
 }

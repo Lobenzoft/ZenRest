@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FEditarClientes));
             this.BCancelar = new System.Windows.Forms.Button();
             this.BAceptar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             // BCancelar
             // 
             this.BCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCancelar.Image = ((System.Drawing.Image)(resources.GetObject("BCancelar.Image")));
             this.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BCancelar.Location = new System.Drawing.Point(300, 210);
             this.BCancelar.Name = "BCancelar";
@@ -55,6 +57,7 @@
             // BAceptar
             // 
             this.BAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAceptar.Image = ((System.Drawing.Image)(resources.GetObject("BAceptar.Image")));
             this.BAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BAceptar.Location = new System.Drawing.Point(180, 210);
             this.BAceptar.Name = "BAceptar";
